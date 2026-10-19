@@ -1,0 +1,41 @@
+name: Edsora Bundle Expansion
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  expand-bundle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for bundle ZIP
+        run: |
+          if [ ! -f Edsora3-public-bundle.zip ]; then
+            echo 'Bundle ZIP not found in repository root; upload Edsora3-public-bundle.zip first.'
+            exit 1
+          fi
+
+      - name: Unzip and expand bundle
+        run: |
+          mkdir -p /tmp/edsora-unpack
+          unzip -o Edsora3-public-bundle.zip -d /tmp/edsora-unpack
+
+      - name: Verify and copy contents
+        run: |
+          if [ -d /tmp/edsora-unpack/Edsora3 ]; then
+            cp -r /tmp/edsora-unpack/Edsora3/* /tmp/edsora-unpack/Edsora3/.[!.]* /tmp/edsora-unpack/Edsora3/..?* . 2>/dev/null || true
+            rm -f Edsora3-public-bundle.zip
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+            git add -A
+            if ! git diff --staged --quiet; then
+              git commit -m "Expand Edsora bundle"
+              git push
+            fi
+          fi

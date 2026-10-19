@@ -1,0 +1,34 @@
+name: Expand Edsora Project Bundle
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  expand-bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check and expand Edsora bundle
+        shell: bash
+        run: |
+          if [ ! -f "Edsora3-public-bundle.zip" ]; then
+            echo "No bundle zip found at repository root. Nothing to expand."
+            exit 0
+          fi
+          mkdir -p /tmp/edsora-unpack
+          unzip -o Edsora3-public-bundle.zip -d /tmp/edsora-unpack
+          if [ ! -d "/tmp/edsora-unpack/Edsora3" ]; then
+            echo "Edsora3 directory not found in the extracted archive."
+            exit 1
+          fi
+          cp -r /tmp/edsora-unpack/Edsora3/* .
+          rm Edsora3-public-bundle.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No staged changes found. Exiting."
+            exit 0
+          fi
+          git commit -m "Add extracted Edsora3 project"
+          git push

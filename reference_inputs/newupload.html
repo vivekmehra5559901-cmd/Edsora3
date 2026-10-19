@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo</title>
+<style>
+  html, body { height: 100%; margin: 0; background: #ffffff; }
+  body { display: flex; align-items: center; justify-content: center; }
+  .logo { width: min(90vw, 90vh, 600px); height: auto; display: block; }
+</style>
+</head>
+<body>
+<svg class="logo" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Document with upload arrow logo">
+  <rect width="1920" height="1920" fill="#ffffff"/>
+
+  <!-- Frame: outer shape, inner window, folded-corner triangle (even-odd cut-outs) -->
+  <path fill="#000000" fill-rule="evenodd" d="
+    M677,467 H1075 L1545,885 L1552,893 V1170
+    A295,295 0 0 1 1257,1465 H677
+    A295,295 0 0 1 382,1170 V762
+    A295,295 0 0 1 677,467 Z
+
+    M677,562 H1045 V890
+    Q1045,920 1078,920 H1457 V1167
+    A200,200 0 0 1 1257,1367 H676
+    A200,200 0 0 1 476,1167 V762
+    A200,200 0 0 1 677,562 Z
+
+    M1106,567 L1435,860 H1106 Z
+  "/>
+
+  <!-- Upload arrow -->
+  <path fill="#000000" d="
+    M757,712 L918,878
+    C940,900 955,920 955,942
+    C955,970 925,997 903,997
+    C875,997 850,972 813,926
+    V1170
+    C813,1215 808,1225 790,1240
+    Q778,1249 757,1249
+    Q736,1249 724,1240
+    C706,1225 701,1215 701,1170
+    V926
+    C664,972 639,997 611,997
+    C589,997 558,970 558,942
+    C558,920 573,900 595,878 Z"/>
+</svg>
+</body>
+</html>

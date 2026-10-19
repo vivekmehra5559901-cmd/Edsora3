@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logo</title>
+<style>
+  html, body { height: 100%; margin: 0; background: #ffffff; }
+  body { display: flex; align-items: center; justify-content: center; }
+  .logo { width: min(90vw, 90vh, 600px); height: auto; display: block; }
+</style>
+</head>
+<body>
+<svg class="logo" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Document with pencil logo">
+  <rect width="1920" height="1920" fill="#ffffff"/>
+
+  <!-- Frame: outer shape, inner window and folded-corner window cut out (even-odd) -->
+  <path fill="#000000" fill-rule="evenodd" d="
+    M675,465 H1075 L1550,890 L1555,893 V1170
+    A295,295 0 0 1 1260,1465 H675
+    A295,295 0 0 1 380,1170 V760
+    A295,295 0 0 1 675,465 Z
+
+    M674,560 H1045 V890
+    Q1045,920 1078,920 H1460 V1170
+    A200,200 0 0 1 1260,1370 H674
+    A200,200 0 0 1 474,1170 V760
+    A200,200 0 0 1 674,560 Z
+
+    M1107,565 L1437,860 H1107 Z
+  "/>
+
+  <!-- Pencil cap -->
+  <path fill="#050505" d="M614,758 A114.5,114.5 0 0 1 843,758 Z"/>
+
+  <!-- Pencil body -->
+  <path fill="#050505" d="M616,780 H842 V1060 Q842,1122 780,1122 H678 Q616,1122 616,1060 Z"/>
+
+  <!-- Pencil tip -->
+  <path fill="#050505" d="
+    M620,1128 Q632,1142 658,1142 H798 Q824,1142 836,1128
+    Q834,1160 824,1175 L752,1275
+    Q728,1308 704,1275 L632,1175
+    Q622,1160 620,1128 Z"/>
+</svg>
+</body>
+</html>

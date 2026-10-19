@@ -1,0 +1,121 @@
+{
+  "method": "Playwright + system Chromium; exact deployable HTML rendered via page.set_content because navigation is blocked here; popover states are displayed by toggling their DOM state, not by claiming live backend interaction",
+  "screenshots": [
+    {
+      "name": "01-dashboard-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "02-dashboard-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "dark": true,
+      "pageErrors": []
+    },
+    {
+      "name": "03-dashboard-mobile-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "04-dashboard-mobile-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": true,
+      "pageErrors": []
+    },
+    {
+      "name": "05-signup-popover-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "06-signup-popover-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": true,
+      "pageErrors": []
+    },
+    {
+      "name": "07-seat-popover-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "08-seat-email-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "09-pwa-sheet-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "10-free-gift-unpacked",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": false,
+      "pageErrors": []
+    },
+    {
+      "name": "11-pwa-sheet-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "dark": true,
+      "pageErrors": []
+    },
+    {
+      "name": "12-admin-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "dark": false,
+      "pageErrors": []
+    }
+  ],
+  "notes": [
+    "Visual rendering checks; modal states are toggled locally for screenshot evidence. Browser click handlers and live backend/API E2E are not verified in this environment.",
+    "Razorpay, Google auth, D1 persistence, WhatsApp delivery and signed webhook require deployment credentials and origin-based testing."
+  ],
+  "counts": {
+    "screenshots": 12,
+    "pageErrors": 0
+  }
+}

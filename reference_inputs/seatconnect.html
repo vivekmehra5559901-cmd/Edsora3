@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Armchair Link User Logo</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #F0F0F2; }
+  body { display: flex; align-items: center; justify-content: center; }
+  .logo { width: 100%; max-width: 1948px; height: auto; display: block; }
+</style>
+</head>
+<body>
+
+<svg class="logo" viewBox="0 0 1948 1096" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Armchair linked to user">
+
+  <!-- Background -->
+  <rect width="1948" height="1096" fill="#F0F0F2"/>
+
+  <!-- ================= ARMCHAIR ================= -->
+  <g fill="none" stroke="#000" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 770 385 L 750 285 Q 735 229 678 229 L 305 229 Q 252 229 240 285 L 214 436 L 245 436 Q 332 436 332 520 L 332 598 Q 332 602 336 602 L 656 602 Q 660 602 660 598 L 660 520 Q 660 436 750 436"/>
+    <path d="M 841 690 Q 841 808 735 808 L 260 808 Q 151 808 151 690 L 151 520 Q 151 486 185 486 L 235 486 Q 282 486 282 536 L 282 598 Q 282 652 336 652 L 658 652 Q 710 652 710 598 L 710 540 Q 710 468 755 436"/>
+  </g>
+
+  <!-- Legs -->
+  <g fill="#000" stroke="#000" stroke-width="10" stroke-linejoin="round">
+    <path d="M 236 820 L 296 820 L 276 876 Q 270 892 250 892 Q 220 892 226 868 Z"/>
+    <path d="M 698 820 L 758 820 L 768 868 Q 772 892 742 892 Q 722 892 716 876 Z"/>
+  </g>
+
+  <!-- ================= USER AVATAR ================= -->
+  <g fill="none" stroke="#1C1C1E">
+    <circle cx="1490" cy="533" r="306" stroke-width="48"/>
+    <circle cx="1488" cy="433" r="96" stroke-width="32"/>
+    <path d="M 1296 760 L 1296 700 Q 1296 591 1405 591 L 1572 591 Q 1685 591 1685 700 L 1685 760" stroke-width="32" stroke-linecap="butt" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ================= CHAIN ================= -->
+  <g fill="none" stroke-linejoin="round">
+
+    <!-- Clear space around the chain (cuts armchair arm and avatar ring) -->
+    <path d="M 870 426 L 947 426 A 89 89 0 0 1 1036 515 A 89 89 0 0 1 947 604 L 870 604 A 89 89 0 0 1 781 515 A 89 89 0 0 1 870 426 Z" stroke="#F0F0F2" stroke-width="104"/>
+    <rect x="944" y="424" width="252" height="178" rx="89" stroke="#F0F0F2" stroke-width="104"/>
+
+    <!-- 1. Left link -->
+    <path d="M 870 426 L 947 426 A 89 89 0 0 1 1036 515 A 89 89 0 0 1 947 604 L 870 604 A 89 89 0 0 1 781 515 A 89 89 0 0 1 870 426 Z" stroke="#000" stroke-width="52"/>
+
+    <!-- 2. Right link on top of the left link (with light outline gap) -->
+    <rect x="944" y="424" width="252" height="178" rx="89" stroke="#F0F0F2" stroke-width="72"/>
+    <rect x="944" y="424" width="252" height="178" rx="89" stroke="#000" stroke-width="52"/>
+
+    <!-- 3. Left link passes back OVER the right link at the top crossing.
+         No clipping: the light gap is short, and the black path starts earlier
+         and ends later than the gap, so every edge lands on solid black. -->
+    <path d="M 900 426 L 947 426 A 89 89 0 0 1 1036 515" stroke="#F0F0F2" stroke-width="72"/>
+    <path d="M 870 426 L 947 426 A 89 89 0 0 1 1034.65 530.45" stroke="#000" stroke-width="52"/>
+
+  </g>
+
+</svg>
+
+</body>
+</html>

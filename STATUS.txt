@@ -1,0 +1,16 @@
+EDSORA — CONTINUED BUILD (2026-10-19)
+
+Implementation source: source/ and reference_inputs/.
+Cloudflare Pages Direct Upload folder: DEPLOYABLE/.
+
+Included:
+- Edsora application UI, PWA assets, admin panel and API worker.
+- Admin access uses placeholder Google account emails (admin1@example.com and admin2@example.com); configure your intended administrator accounts before deployment. Both accounts remain on the Free plan; admin access does not grant a paid subscription.
+- Admin email allowlist is included inside the single SECRETS configuration block in source/src/00_secrets.js; Cloudflare ADMIN_EMAILS is an optional override.
+- LLM, Backblaze, PhonePe, WhatsApp and Firebase configuration supports Cloudflare environment variables. Keep private keys in server-side environment variables.
+- PhonePe UPI AutoPay: ₹2,499 charged at sign-up, then automatically every 29 days (PhonePe has no 29-day frequency, so the mandate is on-demand and Edsora sends the pre-debit notice 2 days before each period ends — call /api/pay/renew-due every 6h from a free cron). Set PHONEPE_CLIENT_ID / PHONEPE_CLIENT_SECRET / PHONEPE_CLIENT_VERSION. Live autopay requires Autopay enabled on your PhonePe merchant account.
+- D1 binding named DB is required.
+
+Checks:
+- Worker syntax and shared unit tests should be run after build.
+- Provider integrations, authentication and D1 require deployment-level testing with your own Cloudflare/provider accounts.
